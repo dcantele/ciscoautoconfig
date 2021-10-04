@@ -474,12 +474,12 @@ def in_cdp_and_int():
                 if 'IP Phone' not in network_devices[item]['Model']:
                     intersect.append(item)
     intersect = sorted(intersect, key=sortkey_natural)
-    print '\n\n\tChecking for devices that are not trunked or AP vlan with CDP'
+    print() ('\n\n\tChecking for devices that are not trunked or AP vlan with CDP')
     time.sleep(.5)
     for device in intersect:
-        print device
+        print('device')
         for values in network_devices[device]:
-            print '\t' + values + ':', network_devices[device][values].rjust(50 - len(values))
+            print ('\t' + values + ':', network_devices[device][values].rjust(50 - len(values)))
         for values in int_sts[device]:
             print '\t' + values + ':', int_sts[device][values].rjust(50 - len(values))
     if len(intersect) == 0:
